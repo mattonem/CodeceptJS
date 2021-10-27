@@ -982,6 +982,13 @@ describe('Puppeteer (remote browser)', function () {
 
     return I._before();
   });
+  
+  afterEach(() => {
+    return I._after()
+      .then(() => {
+        remoteBrowser;
+      });
+  });
 
   describe('#_startBrowser', () => {
     it('should throw an exception when endpoint is unreachable', async () => {
