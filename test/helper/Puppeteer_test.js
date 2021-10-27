@@ -983,13 +983,6 @@ describe('Puppeteer (remote browser)', function () {
     return I._before();
   });
 
-  afterEach(() => {
-    return I._after()
-      .then(() => {
-        remoteBrowser && remoteBrowser.close();
-      });
-  });
-
   describe('#_startBrowser', () => {
     it('should throw an exception when endpoint is unreachable', async () => {
       helperConfig.chrome.browserWSEndpoint = 'ws://unreachable/';
