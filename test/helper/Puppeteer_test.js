@@ -934,15 +934,9 @@ describe('Puppeteer', function () {
 
 let remoteBrowser;
 async function createRemoteBrowser() {
-  if (remoteBrowser) {
-    await remoteBrowser.close();
-  }
   remoteBrowser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
     headless: true,
-  });
-  remoteBrowser.on('closed', () => {
-    remoteBrowser = null;
   });
   return remoteBrowser;
 }
