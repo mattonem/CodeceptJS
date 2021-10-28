@@ -941,7 +941,7 @@ async function createRemoteBrowser() {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
     headless: true,
   });
-  remoteBrowser.on('disconnected', () => {
+  remoteBrowser.on('closed', () => {
     remoteBrowser = null;
   });
   return remoteBrowser;
