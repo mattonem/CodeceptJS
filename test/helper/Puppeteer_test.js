@@ -1020,7 +1020,11 @@ describe('Puppeteer (remote browser)', function () {
 
       numPages = await I.grabNumberOfOpenTabs();
       assert.equal(numPages, 2);
+      
+      await I._stopBrowser();
 
+      currentPages = await context.pages();
+      assert.equal(currentPages.length, 0);
     });
   });
 });
