@@ -983,9 +983,10 @@ describe('Puppeteer (remote browser)', function () {
     return I._before();
   });
   
-  afterEach(async () => {
-    await I._after();
-    return remoteBrowser && remoteBrowser.close();
+  afterEach(() => {
+    console.log("YOLO");
+    return I._after();
+    console.log("YOLO2");
   });
 
   describe('#_startBrowser', () => {
